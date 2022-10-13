@@ -4,6 +4,7 @@ import Generation from '../assets/Icons/Generation.svg'
 import Sort from '../assets/Icons/Sort.svg'
 import FilterIcon from '../assets/Icons/Filter.svg'
 import styled from 'styled-components'
+import SearchBar from './SearchBar/Searchbar'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       </IconsGroup>
       <HeaderTitle>Pokédex</HeaderTitle>
       <HeaderDescription>Search for Pokémon by name or using the National Pokédex number</HeaderDescription>
+      <SearchBar />
     </div>
   )
 }
@@ -44,7 +46,6 @@ const HeaderIcon = styled.img`
   width: 20px;
   height: 20px;
 `
-
 const HeaderTitle = styled.h1`
   position: absolute;
   width: 334px;
@@ -53,7 +54,7 @@ const HeaderTitle = styled.h1`
   top: 100px;
   font-family: 'SF Pro Display';
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 32px;
   line-height: 38px;
   color: #17171B;
