@@ -5,7 +5,7 @@ const Tags = ({name})=> {
     }
     console.log(theme.colors.backgroundTypes[name],'color')
     return(
-        <p style={style}>{name} / </p>
+        <p style={style}>{name}</p>
     )
 }
 export default Tags

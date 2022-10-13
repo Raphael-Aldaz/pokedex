@@ -1,8 +1,7 @@
-import {theme} from '../src/Theme/Theme'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import './App.css'
-import Tags from './Components/Tags/Tags'
+import Tags from './Tags/Tags'
 
 function App() {
   const {data} = useQuery(['types'], () => 
