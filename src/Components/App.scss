@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF');
+}
+body {
+  background-color: #242424;
+}
+.App{
+  height: 100vh;
+  background-color: #FFFF;
+  max-width: 414px;
+  margin: auto;
+  color: #17171B;
+  position: relative;
+}
