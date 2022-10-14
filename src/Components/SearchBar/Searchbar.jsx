@@ -11,15 +11,14 @@ const SearchBar = () => {
 }
 
 const FormSearch = styled.form`
+width: 334px;
+margin: auto;
 display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: flex-start;
 padding: 20px 25px;
 gap: 10px;
-position: absolute;
-left: 40px;
-top: 211px;
 background: #F2F2F2;
 border-radius: 10px;
 `
