@@ -6,13 +6,16 @@ import FilterIcon from '../assets/Icons/Filter.svg'
 import styled from 'styled-components'
 import SearchBar from './SearchBar/Searchbar'
 import Cards from './Cards/Cards'
+import Pokemons from './Pokemon/Pokemon'
 
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-
+import { Routes, Route, useParams} from "react-router-dom"
 
 function App() {
+  const params = useParams();
   const [pokemons, setPokemons] = useState([])
+
 
   useEffect(()=> {
     axios.get('https://pokeapi.co/api/v2/pokemon/')
@@ -23,8 +26,13 @@ function App() {
       console.log(error)
     })
   },[])
+
+
   return (
     <div className='App'>
+    <Routes>
+      <Route path="*" element={
+        <>
       <LogoPokeballHeader src={logoPokeball} />
       <HeaderWrapper>
       <IconsGroup>
@@ -36,12 +44,23 @@ function App() {
       <HeaderDescription>Search for Pokémon by name or using the National Pokédex number</HeaderDescription>
       </HeaderWrapper>
       <SearchBar />
+      <ListCardWrapper>
       {
         pokemons.map((pokemon) => 
-          <Cards id={pokemon.id} name={pokemon.name} url = {pokemon.url} key={pokemon.name} />
+          <Cards 
+          key={pokemon.name} 
+          id={pokemon.id} 
+          name={pokemon.name} 
+          url = {pokemon.url}/>
         )
       }
-      
+      </ListCardWrapper>
+      </>
+      } />
+      <Route path='/:name' element={
+        <Pokemons name={params} />
+      } />
+    </Routes>
     </div>
   )
 }
@@ -101,5 +120,10 @@ const HeaderDescription = styled.p`
   line-height: 19px;
   color: #747476;
 `
-
+const ListCardWrapper = styled.div`
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`
 export default App

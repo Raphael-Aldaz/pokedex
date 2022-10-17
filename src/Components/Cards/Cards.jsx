@@ -5,8 +5,9 @@ import {theme} from '../../Theme/Theme'
 import grid from '../../assets/Icons/6x3.svg'
 import pokeball from '../../assets/Icons/pokeballCard.svg'
 import { Badges } from "../Badges/Badges"
+import { Link } from "react-router-dom"
 
-const Cards = ({name, url}) => {
+const Cards = ({name, url }) => {
   const[typesColor, setTypesColor] = useState([])
   const[types, setTypes] = useState([])
   const [picture, setPicture] = useState([])
@@ -33,7 +34,8 @@ const Cards = ({name, url}) => {
     };
     let key = 0
   return (
-    <ListCardWrapper>
+    <>
+    <Link  to={ `/${name}`}>
     <CardItem bgColor={theme.colors.backgroundTypes[typesColor]} >
     <PokeballImg src={pokeball} />
     <PokemonData>
@@ -50,16 +52,11 @@ const Cards = ({name, url}) => {
     </PokemonData>
     <PokemonPicture src={picture} />
     </CardItem>
-    </ListCardWrapper>
-    
+    </Link>
+    </>
   )
 }
 
-const ListCardWrapper = styled.div`
-  margin-top: 45px;
-  display: flex;
-  gap: 30px;
-`
 const CardItem = styled.div`
   width: 334px;
   height: 115px;

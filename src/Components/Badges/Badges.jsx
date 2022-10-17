@@ -1,6 +1,5 @@
 import styled from "styled-components"
 export const Badges = ({name, colorFamilly, typesIcons}) => {
- console.log(typesIcons)
   return (
     <Badge bgColor={colorFamilly}>
  
